@@ -34,6 +34,10 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/products',
       templateUrl: '/templates/productsIndex.html',
       controller: 'ProductsIndexController as productsIndex'
+    }).state('tagsIndex', {
+      url: '/tags',
+      templateUrl: '/templates/tagsIndex.html',
+      controller: 'TagsIndexController as tagsIndex'
     });
 
   $urlRouterProvider.otherwise('/users');

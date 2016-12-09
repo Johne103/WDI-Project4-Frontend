@@ -1,0 +1,11 @@
+<section>
+  <h1>Categories Index</h1>
+  <ul>
+    <li ng-repeat="tag in tagsIndex.all">
+      <a ui-sref="tagsShow({ id: tag.id })">
+        <h2>{{ tag.category }}</h2>
+        <!-- <h4>{{ user.email }}</h4> -->
+      </a>
+    </li>
+  </ul>
+</section>
