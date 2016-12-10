@@ -47,8 +47,8 @@ function UsersEditController(User, $state) {
   const usersEdit = this;
 
   usersEdit.user = User.get($state.params);
-
   function update() {
+    console.log(usersEdit.user);
     usersEdit.user.$update(() => {
       $state.go('usersShow', $state.params);
     });

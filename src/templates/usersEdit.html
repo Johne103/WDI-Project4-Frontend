@@ -1,4 +1,4 @@
-  <h1>Edit User</h1>
+<h1>Edit User</h1>
 
 <section>
   <form ng-submit="usersEdit.update()">
@@ -9,6 +9,14 @@
     <div>
       <label>Email</label>
       <input type="text" name="email" placeholder="Email" ng-model="usersEdit.user.email" class="u-full-width">
+    </div>
+    <div>
+      <label>Store name</label>
+      <input type="text" name="store_name" placeholder="Store name" ng-model="usersEdit.user.store_name" class="u-full-width">
+    </div>
+    <div>
+      <label>Store address</label>
+      <input type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width">
     </div>
     <button>Update</button>
   </form>

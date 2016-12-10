@@ -34,10 +34,36 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/products',
       templateUrl: '/templates/productsIndex.html',
       controller: 'ProductsIndexController as productsIndex'
-    }).state('tagsIndex', {
+    })
+    .state('productsShow', {
+      url: '/products/:id',
+      templateUrl: '/templates/productsShow.html',
+      controller: 'ProductsShowController as productsShow'
+    })
+    .state('productsEdit', {
+      url: '/products/:id/edit',
+      templateUrl: '/templates/productsEdit.html',
+      controller: 'ProductsEditController as productsEdit'
+    })
+    .state('productsNew', {
+      url: '/products/New',
+      templateUrl: '/templates/productsNew.html',
+      controller: 'ProductsNewController as productsNew'
+    })
+    .state('tagsIndex', {
       url: '/tags',
       templateUrl: '/templates/tagsIndex.html',
       controller: 'TagsIndexController as tagsIndex'
+    })
+    .state('tagsShow', {
+      url: '/tags/:id',
+      templateUrl: '/templates/tagsShow.html',
+      controller: 'TagsShowController as tagsShow'
+    })
+    .state('tagsEdit', {
+      url: '/tags/:id/edit',
+      templateUrl: '/templates/tagsEdit.html',
+      controller: 'TagsEditController as tagsEdit'
     });
 
   $urlRouterProvider.otherwise('/users');

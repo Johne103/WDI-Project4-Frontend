@@ -1,0 +1,9 @@
+<section>
+  <h1>Show Category</h1>
+  <h4>{{ tagsShow.tag.category }}</h4>
+
+
+  <a ui-sref="tagsEdit({ id: tagsShow.tag.id })" class="button">Edit<a>
+  <button ng-if="tagsShow.isLoggedIn()" ng-click="tagsShow.delete()" ng-click="tagsShow.delete()">Delete</button>
+
+</section>

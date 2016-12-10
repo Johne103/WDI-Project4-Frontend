@@ -6,35 +6,35 @@ angular.module('finalProject')
 
 ProductsIndexController.$inject = ['Product'];
 function ProductsIndexController(Product) {
-  const productsShowsIndex = this;
+  const productsIndex = this;
 
-  productsShowsIndex.all = Product.query();
+  productsIndex.all = Product.query();
 }
 
 ProductsNewController.$inject = ['Product', '$state'];
 function ProductsNewController(Product, $state) {
-  const productsShowsNew = this;
+  const productsNew = this;
 
-  productsShowsNew.productsShow = {};
+  productsNew.product = {};
 
   function create() {
-    Product.save(productsShowsNew.productsShow, () => {
-      $state.go('productsShowsIndex');
+    Product.save(productsNew.product, () => {
+      $state.go('productsIndex');
     });
   }
 
-  productsShowsNew.create = create;
+  productsNew.create = create;
 }
 
 ProductsShowController.$inject = ['Product', '$state', '$auth'];
 function ProductsShowController(Product, $state, $auth) {
   const productsShow = this;
 
-  productsShow.productsShow = Product.get($state.params);
+  productsShow.product = Product.get($state.params);
 
   function deleteProduct() {
-    productsShow.productsShow.$remove(() => {
-      $state.go('productsShowsIndex');
+    productsShow.product.$remove(() => {
+      $state.go('productsIndex');
     });
   }
 
@@ -44,13 +44,13 @@ function ProductsShowController(Product, $state, $auth) {
 
 ProductsEditController.$inject = ['Product', '$state'];
 function ProductsEditController(Product, $state) {
-  const usersEdit = this;
+  const productsEdit = this;
 
-  usersEdit.user = Product.get($state.params);
-
+  productsEdit.product = Product.get($state.params);
   function update() {
-    usersEdit.user.$update(() => {
-      $state.go('usersShow', $state.params);
+    console.log(productsEdit.product);
+    productsEdit.product.$update(() => {
+      $state.go('productsShow', $state.params);
     });
   }
 

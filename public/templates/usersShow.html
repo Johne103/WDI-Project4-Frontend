@@ -1,9 +1,10 @@
 <section>
   <h1>Show User</h1>
-  <h2>{{ usersShow.user.username }}</h2>
-  <h4>{{ usersShow.user.email }}</h4>
+  <h2>User name: {{ usersShow.user.username }}</h2>
+  <h4>Email: {{ usersShow.user.email }}</h4>
+  <h4>Store name: {{ usersShow.user.store_name }}</h4>
+  <h4>Store address: {{ usersShow.user.address }}</h4>
 
   <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
   <button ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button>
-
 </section>
