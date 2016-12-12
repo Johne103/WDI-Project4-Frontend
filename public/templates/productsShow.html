@@ -9,6 +9,8 @@
   <h4>Offer available: {{ productsShow.product.is_available }}</h4>
   <h4>Quantity: {{ productsShow.product.quantity }}</h4>
 
+  <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map>
+
   <a ui-sref="productsEdit({ id: productsShow.product.id })" class="button">Edit<a>
   <button ng-if="productsShow.isLoggedIn()" ng-click="productsShow.delete()" ng-click="productsShow.delete()">Delete</button>
 

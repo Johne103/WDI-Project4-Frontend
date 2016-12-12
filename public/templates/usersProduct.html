@@ -4,9 +4,15 @@
   <div>
     <ol>
       Selected Items:
-      <li ng-repeat="item in main.selectedList track by $index"> {{ item.description }} </li>
+      <li ng-repeat="item in main.selectedList track by $index">
+        {{ item.name }}
+        {{ item.description}}
+        {{ item.original_price }}
+        {{ item.offer_price }}
+        {{ item.end_date}}
+       </li>
       </li>
     </ol>
   </div>
-  
+
 </section>

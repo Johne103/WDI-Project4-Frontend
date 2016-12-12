@@ -1,16 +1,16 @@
 <section>
   <h1>Products Index</h1>
-
+  <h2>Store name: {{ productsIndex.user.username }}</h2>
   <div >
     <ol>
       <li ng-repeat="product in productsIndex.all">
         <a ui-sref="productsShow({ id: product.id })">
-          <h4 class="productList"> {{ product.description }} </h4>
+          <h4 class="productList"> {{ product.name }} </h4>
           <img ng-src="{{ product.image }}" alt="product image"/>
         </a>
         <button ng-click="main.addToSelectedProducts(product)">Add to Basket</button>
       </li>
     </ol>
   </div>
-  
+
 </section>

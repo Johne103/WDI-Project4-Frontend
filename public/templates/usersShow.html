@@ -1,9 +1,13 @@
 <section>
-  <h1>Show User</h1>
-  <h2>User name: {{ usersShow.user.username }}</h2>
+  <h1>Show Store</h1>
+  <h2>Store name: {{ usersShow.user.username }}</h2>
   <h4>Email: {{ usersShow.user.email }}</h4>
   <h4>Store name: {{ usersShow.user.store_name }}</h4>
   <h4>Store address: {{ usersShow.user.address }}</h4>
+
+  <!-- <google-map center="{ lat: 51.51, lng: -0.08 }"></google-map> -->
+  <google-map center="{ lat: usersShow.user.latitude, lng: usersShow.user.longitude }"></google-map>
+
 
   <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
   <button ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button>
