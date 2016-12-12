@@ -1,8 +1,8 @@
 <section>
   <h1>Show Product</h1>
-  <h2>Product type: {{ productsShow.product.name }}</h2>
+  <h4>Product type: {{ productsShow.product.name }}</h4>
   <h4>Product description: {{ productsShow.product.description }}</h4>
-  <h4>{{ productsShow.product.image }}</h4>
+  <img ng-src="{{ productsShow.product.image }}">
   <h4>Original price: £{{ productsShow.product.original_price }}</h4>
   <h4>Offer price: £{{ productsShow.product.offer_price }}</h4>
   <h4>Offer end date: {{ productsShow.product.end_time }}</h4>

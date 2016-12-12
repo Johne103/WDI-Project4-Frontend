@@ -2,28 +2,31 @@ angular.module('finalProject')
   .controller('ProductsIndexController', ProductsIndexController)
   .controller('ProductsNewController', ProductsNewController)
   .controller('ProductsShowController', ProductsShowController)
-  .controller('ProductsEditController', ProductsEditController);
+  .controller('ProductsEditController', ProductsEditController)
+  .controller('ProductsPickedIndexController', ProductsPickedIndexController);
+
+
 
 ProductsIndexController.$inject = ['Product'];
 function ProductsIndexController(Product) {
-  const productsIndex = this;
+  const productIndex = this;
 
-  productsIndex.all = Product.query();
+  productIndex.all = Product.query();
 }
 
 ProductsNewController.$inject = ['Product', '$state'];
 function ProductsNewController(Product, $state) {
-  const productsNew = this;
+  const productsShowsNew = this;
 
-  productsNew.product = {};
+  productsShowsNew.productsShow = {};
 
   function create() {
-    Product.save(productsNew.product, () => {
-      $state.go('productsIndex');
+    Product.save(productsShowsNew.productsShow, () => {
+      $state.go('productIndex');
     });
   }
 
-  productsNew.create = create;
+  productsShowsNew.create = create;
 }
 
 ProductsShowController.$inject = ['Product', '$state', '$auth'];
@@ -34,7 +37,7 @@ function ProductsShowController(Product, $state, $auth) {
 
   function deleteProduct() {
     productsShow.product.$remove(() => {
-      $state.go('productsIndex');
+      $state.go('productIndex');
     });
   }
 
@@ -47,8 +50,8 @@ function ProductsEditController(Product, $state) {
   const productsEdit = this;
 
   productsEdit.product = Product.get($state.params);
+
   function update() {
-    console.log(productsEdit.product);
     productsEdit.product.$update(() => {
       $state.go('productsShow', $state.params);
     });
@@ -56,4 +59,13 @@ function ProductsEditController(Product, $state) {
 
   this.update = update;
 
+}
+
+ProductsPickedIndexController.$inject = ['Product', '$auth', 'User'];
+function ProductsPickedIndexController(Product, $auth, User) {
+  const productsPickedIndex = this;
+  productsPickedIndex.productPicks = [];
+  User.get({id: $auth.getPayload()._id}, (user) => {
+    productsPickedIndex.user = user;
+  });
 }

@@ -5,6 +5,11 @@ angular
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: '/templates/home.html',
+      controller: 'MainController as home'
+    })
     .state('usersIndex', {
       url: '/users',
       templateUrl: '/templates/usersIndex.html',
@@ -30,10 +35,25 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/usersEdit.html',
       controller: 'UsersEditController as usersEdit'
     })
+    .state('usersProduct', {
+      url: '/users/products',
+      templateUrl: '/templates/usersProduct.html',
+      controller: 'UsersProductController as usersProduct'
+    })
     .state('productsIndex', {
       url: '/products',
       templateUrl: '/templates/productsIndex.html',
       controller: 'ProductsIndexController as productsIndex'
+    })
+    .state('productsPickedIndex', {
+      url: '/products',
+      templateUrl: '/templates/productsPickedIndex.html',
+      controller: 'ProductsPickedIndexController as productsPickedIndex'
+    })
+    .state('productsNew', {
+      url: '/products/New',
+      templateUrl: '/templates/productsNew.html',
+      controller: 'ProductsNewController as productsNew'
     })
     .state('productsShow', {
       url: '/products/:id',
@@ -44,11 +64,6 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/products/:id/edit',
       templateUrl: '/templates/productsEdit.html',
       controller: 'ProductsEditController as productsEdit'
-    })
-    .state('productsNew', {
-      url: '/products/New',
-      templateUrl: '/templates/productsNew.html',
-      controller: 'ProductsNewController as productsNew'
     })
     .state('tagsIndex', {
       url: '/tags',
