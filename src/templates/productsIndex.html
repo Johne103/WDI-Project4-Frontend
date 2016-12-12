@@ -1,30 +1,16 @@
 <section>
   <h1>Products Index</h1>
-  <ol>
 
-    <li ng-repeat="product in productsIndex.all">
-      <h4 class="productList">
-        <img ng-src="{{ product.image }}" alt=""/>
+  <div >
+    <ol>
+      <li ng-repeat="product in productsIndex.all">
         <a ui-sref="productsShow({ id: product.id })">
-        {{ product.description }}
-        <!-- <button ng-click="productsIndex.pick(product)">Pick</button> -->
-      </a>
-      <!-- <input type="checkbox" ng-checked=:productIndex.isPicked(product)" ng-click="productIndex.toggle(product)"> -->
-    </h4>
-    </li>
-  </ol>
+          <h4 class="productList"> {{ product.description }} </h4>
+          <img ng-src="{{ product.image }}" alt="product image"/>
+        </a>
+        <button ng-click="main.addToSelectedProducts(product)">Add to Basket</button>
+      </li>
+    </ol>
+  </div>
+  
 </section>
-
-
-<!-- <ul>
-
-  <li ng-repeat="line in userLines.all">
-
-    <label class="linesBlack"> <img src="../images/underground-logo.png" alt="" />
-      {{ line.name }}
-      <input type="checkbox" ng-checked="userLines.isFav(line)" ng-click="userLines.toggle(line)">
-    </label>
-  </li>
-</ul>
-
-<button ng-click="userLines.update()">Update</button> -->

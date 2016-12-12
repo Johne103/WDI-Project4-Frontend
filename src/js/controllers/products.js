@@ -2,8 +2,8 @@ angular.module('finalProject')
   .controller('ProductsIndexController', ProductsIndexController)
   .controller('ProductsNewController', ProductsNewController)
   .controller('ProductsShowController', ProductsShowController)
-  .controller('ProductsEditController', ProductsEditController)
-  .controller('ProductsPickedIndexController', ProductsPickedIndexController);
+  .controller('ProductsEditController', ProductsEditController);
+  // .controller('ProductsPickedIndexController', ProductsPickedIndexController);
 
 
 
@@ -61,11 +61,12 @@ function ProductsEditController(Product, $state) {
 
 }
 
-ProductsPickedIndexController.$inject = ['Product', '$auth', 'User'];
-function ProductsPickedIndexController(Product, $auth, User) {
-  const productsPickedIndex = this;
-  productsPickedIndex.productPicks = [];
-  User.get({id: $auth.getPayload()._id}, (user) => {
-    productsPickedIndex.user = user;
-  });
-}
+// ProductsPickedIndexController.$inject = ['Product', '$auth', 'User'];
+// function ProductsPickedIndexController(Product, $auth, User) {
+//   const productsPickedIndex = this;
+//   productsPickedIndex.productPicks = [];
+//   // console.log($auth.getPayload());
+//   User.get({id: $auth.getPayload()._id}, (user) => {
+//     productsPickedIndex.user = user;
+//   });
+// }

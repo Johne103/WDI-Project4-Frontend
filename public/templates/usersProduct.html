@@ -1,18 +1,12 @@
 <section>
-  <h1>User Products Picker</h1>
-  <ol>
 
-    <li ng-repeat="product in productsIndex.all">
-      <h4 class="productList">
-        <img ng-src="{{ product.image }}" alt=""/>
-
-        {{ product.description }}
-
-
-      <input type="checkbox" ng-checked="usersProduct.isPick(product)" ng-click="usersProduct.toggle(product)">
-    </h4>
-    </li>
-  </ol>
-
-  <button ng-click="usersProduct.update()">Update</button>
+  <h1>Products Picked Index</h1>
+  <div>
+    <ol>
+      Selected Items:
+      <li ng-repeat="item in main.selectedList track by $index"> {{ item.description }} </li>
+      </li>
+    </ol>
+  </div>
+  
 </section>

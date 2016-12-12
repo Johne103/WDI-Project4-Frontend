@@ -1,5 +1,6 @@
 angular.module('finalProject')
-  .controller('MainController', MainController);
+  .controller('MainController', MainController)
+  ;
 
 MainController.$inject = ['$auth', '$state', '$rootScope'];
 function MainController($auth, $state, $rootScope) {
@@ -30,4 +31,13 @@ function MainController($auth, $state, $rootScope) {
   $rootScope.$on('$stateChangeStart', secureState);
 
   main.logout = logout;
+
+  main.selectedList = [];
+  // user selected prod list
+  function addToSelectedProducts(product) {
+    main.selectedList.push(product);
+    console.log('Basket: ', main.selectedList);
+  }
+  main.addToSelectedProducts = addToSelectedProducts;
+
 }

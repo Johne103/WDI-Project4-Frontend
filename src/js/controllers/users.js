@@ -2,8 +2,7 @@ angular.module('finalProject')
   .controller('UsersIndexController', UsersIndexController)
   .controller('UsersNewController', UsersNewController)
   .controller('UsersShowController', UsersShowController)
-  .controller('UsersEditController', UsersEditController)
-  .controller('UsersProductController', UsersProductController);
+  .controller('UsersEditController', UsersEditController);
 
 
 UsersIndexController.$inject = ['User'];
@@ -58,38 +57,4 @@ function UsersEditController(User, $state) {
 
   this.update = update;
 
-}
-
-UsersProductController.$inject = ['User', '$state', 'Product', '$scope', '$auth'];
-function UsersProductController(User, $state, Product, $scope, $auth) {
-  const usersProduct = this;
-  usersProduct.all = [];
-
-  usersProduct.user = User.get({ id: $auth.getPayload()._id });
-  usersProduct.isPick = isPick;
-  usersProduct.toggle = toggle;
-
-
-  function isPick(product) {
-    return usersProduct.user.productPicks.includes(product.id);
-  }
-
-  function toggle(product) {
-    if(isPick(product)) {
-      const idx = usersProduct.user.productPicks.findIndex((productId) => {
-        productId === product.id;
-      });
-      usersProduct.user.productPicks.splice(idx, 1);
-    } else {
-      usersProduct.user.productPicks.push(product.id);
-    }
-  }
-
-  function update() {
-    usersProduct.user.$update(() => {
-      $state.go('productsIndex', $state.params);
-    });
-  }
-
-  usersProduct.update = update;
 }

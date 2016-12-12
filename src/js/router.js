@@ -25,6 +25,10 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/login.html',
       controller: 'LoginController as login'
     })
+    .state('usersProduct', {
+      url: '/users/products',
+      templateUrl: '/templates/usersProduct.html'
+    })
     .state('usersShow', {
       url: '/users/:id',
       templateUrl: '/templates/usersShow.html',
@@ -34,11 +38,6 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/users/:id/edit',
       templateUrl: '/templates/usersEdit.html',
       controller: 'UsersEditController as usersEdit'
-    })
-    .state('usersProduct', {
-      url: '/users/products',
-      templateUrl: '/templates/usersProduct.html',
-      controller: 'UsersProductController as usersProduct'
     })
     .state('productsIndex', {
       url: '/products',
