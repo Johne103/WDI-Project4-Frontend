@@ -8,11 +8,37 @@
   <h4 class="showHeading4">Offer end date: {{ productsShow.product.end_time }}</h4>
   <h4 class="showHeading4">Offer available: {{ productsShow.product.is_available }}</h4>
   <h4 class="showHeading4">Quantity: {{ productsShow.product.quantity }}</h4>
-
   <!-- <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map> -->
   <google-map center="{ lat: usersShow.user.latitude, lng: usersShow.user.longitude }" ng-if="usersShow.user.latitude"></google-map>
 
   <a ui-sref="productsEdit({ id: productsShow.product.id })" class="button">Edit<a>
-  <button ng-if="productsShow.isLoggedIn()" ng-click="productsShow.delete()" ng-click="productsShow.delete()">Delete</button>
-
+  <button class="btn btn-primary" ng-if="productsShow.isLoggedIn()" ng-click="productsShow.delete()" ng-click="productsShow.delete()">Delete</button>
 </section>
+
+
+<!-- <div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div> -->

@@ -23,18 +23,18 @@
       <input type="float" name="offerPrice" placeholder="Offer Price" ng-model="productsNew.product.offer_price" class="u-full-width">
     </div>
     <div>
-      <label>End Time</label>
-      <input type="text" name="endTime" placeholder="End Time" ng-model="productsNew.product.end_time" class="u-full-width">
+      <label>Offer End Date</label>
+      <input type="date" name="endTime" placeholder="Date" ng-model="productsNew.product.end_time" class="u-full-width">
     </div>
     <div>
       <label>Availability</label>
-      <input type="boolean" name="Availability" placeholder="Product is available" ng-model="productsNew.product.is_available" class="u-full-width">
+      <input type="checkbox" name="availability" placeholder="Item on Offer?" ng-model="productsNew.product.is_available" class="u-full-width">
     </div>
     <div>
       <label>Quantity</label>
       <input type="number" name="Quantity" placeholder="Quantity" ng-model="productsNew.product.quantity" class="u-full-width">
     </div>
 
-    <button>Create</button>
+    <button class="btn btn-primary">Create</button>
   </form>
 </section>

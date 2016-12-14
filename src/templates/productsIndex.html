@@ -1,16 +1,18 @@
 <section>
-  <h1 class="productHeading1"> Products Index</h1>
-  <h2 class="productHeading2" >Store name: {{ main.currentUser.username }}</h2>
-  <div >
-    <ol>
-      <li ng-repeat="product in productsIndex.all">
-        <a ui-sref="productsShow({ id: product.id })">
-          <h4 class="productList"> {{ product.name }} </h4>
-          <img ng-src="{{ product.image }}" alt="product image"/>
-        </a>
-        <button ng-click="productsIndex.onOffer(product)" ng-if="!product.is_available">Add to Basket</button>
-      </li>
-    </ol>
+  <h1> Products Index</h1>
+  <h2>Store name: {{ main.currentUser.username }}</h2>
+  <!-- <div class="card-deck-wrapper"> -->
+  <div class="row">
+    <div class="col-md-4 col-sm-12 cards-single" ng-repeat="product in productsIndex.all">
+      <div class="card">
+        <img class="card-img-top" ng-src="{{ product.image }}" alt="product image">
+        <div class="card-block">
+          <a ui-sref="productsShow({ id: product.id })">
+            <h4 class="productListcard-title"> {{ product.name }} </h4>
+          </a>
+          <button class="btn btn-primary" ng-click="productsIndex.onOffer(product)" ng-if="product.is_available">Put on Offer</button>
+        </div>
+      </div>
+    </div>
   </div>
-
 </section>

@@ -1,2 +1,2 @@
-.google-map,img{display:inline-block}img{width:100px;height:100px;border-radius:10px;margin-left:auto}.google-map img{border-radius:0!important;width:auto;height:auto}h4{font-size:15px}.google-map{width:400px;height:400px;vertical-align:top}
+.google-map,img{display:inline-block}*{box-sizing:border-box}img{width:100px;height:100px;border-radius:10px;margin-left:auto}.google-map img{border-radius:0!important;width:auto;height:auto}h4{font-size:15px}.google-map{width:400px;height:400px;vertical-align:top}.cards-single:nth-child(3n+1){clear:left}
 /*# sourceMappingURL=style.css.map */

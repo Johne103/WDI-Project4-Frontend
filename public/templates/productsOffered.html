@@ -1,14 +1,16 @@
 <section>
-  <h1 class="productHeading1"> Products Offered</h1>
-  <h2 class="productHeading2" >Store name: {{ main.currentUser.username }}</h2>
+  <h1> Products Offered</h1>
+  <h2>Store name: {{ main.currentUser.username }}</h2>
   <div >
     <ol>
       <li ng-repeat="product in productsOffered.all">
         <a ui-sref="productsShow({ id: product.id })">
-          <h4 class="productList"> {{ product.name }} </h4>
-          <img ng-src="{{ product.image }}" alt="product image"/>
+          <h4> {{ product.name }} </h4>
         </a>
-        <button ng-click="productsOffered.offOffer(product, $index)" ng-if="product.is_available">Remove from basket</button>
+        <img ng-src="{{ product.image }}" alt="product image"/>
+        <h6> Original Price: £{{ product.original_price }}    Offer Price: £{{ product.offer_price }}   Savings: £{{ product.original_price - product.offer_price }}</h6>
+        <h6> Offer End Date: {{ product.end_time }} </h6>
+        <button class="btn btn-primary" ng-click="productsOffered.offOffer(product, $index)" ng-if="product.is_available">Remove Offer</button>
       </li>
     </ol>
   </div>

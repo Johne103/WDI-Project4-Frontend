@@ -1,44 +1,39 @@
 <h1>Edit Product</h1>
 
 <section>
-<form ng-submit="productsEdit.update()">
-  <div>
-    <label>Product name</label>
-    <input type="text" name="name" placeholder="Product Name" ng-model="productsEdit.product.name" class="u-full-width">
-  </div>
-  <div>
-    <label>Product description</label>
-    <input type="text" name="description" placeholder="Description" ng-model="productsEdit.product.description" class="u-full-width">
-  </div>
-  <div>
-    <label>Product Image</label>
-    <input type="text" name="productImage" placeholder="Product Image" ng-model="productsEdit.product.image" class="u-full-width">
-  </div>
-  <div>
-    <label>Original Price</label>
-    <input type="float" name="originalPrice" placeholder="Original Price" ng-model="productsEdit.product.original_price" class="u-full-width">
-  </div>
-  <div>
-    <label>Offer Price</label>
-    <input type="float" name="offerPrice" placeholder="Offer Price" ng-model="productsEdit.product.offer_price" class="u-full-width">
-  </div>
-  <div>
-    <label>End Time</label>
-    <input type="text" name="endTime" placeholder="End Time" ng-model="productsEdit.product.end_time" class="u-full-width">
-  </div>
-  <div>
-    <label>Availability</label>
-    <input type="boolean" name="Availability" placeholder="Product is available" ng-model="productsEdit.product.is_available" class="u-full-width">
-  </div>
-  <div>
-    <label>Quantity</label>
-    <input type="number" name="Quantity" placeholder="Quantity" ng-model="productsEdit.product.quantity" class="u-full-width">
-  </div>
-  <button>Update</button>
-</form>
+  <form class="form-inline float-xs-right" ng-submit="productsEdit.update()">
+    <div>
+      <label>Product name</label>
+      <input class="form-control"  type="text" name="name" placeholder="Product Name" ng-model="productsEdit.product.name" class="u-full-width">
+    </div>
+    <div>
+      <label>Product description</label>
+      <input class="form-control" type="text" name="description" placeholder="Description" ng-model="productsEdit.product.description" class="u-full-width">
+    </div>
+    <div>
+      <label>Product Image</label>
+      <input class="form-control" type="text" name="productImage" placeholder="Product Image" ng-model="productsEdit.product.image" class="u-full-width">
+    </div>
+    <div>
+      <label>Original Price</label>
+      <input class="form-control" type="float" name="originalPrice" placeholder="Original Price" ng-model="productsEdit.product.original_price" class="u-full-width">
+    </div>
+    <div>
+      <label>Offer Price</label>
+      <input class="form-control" type="float" name="offerPrice" placeholder="Offer Price?" ng-model="productsEdit.product.offer_price" class="u-full-width">
+    </div>
+    <div>
+      <label>Offer End Date</label>
+      <input class="form-control" type="date" name="endTime" placeholder="Offer End Date?" ng-model="productsEdit.product.end_time" class="u-full-width">
+    </div>
+    <div>
+      <label>Availability</label>
+      <input class="form-control" type="boolean" name="Availability" placeholder="Product is available" ng-model="productsEdit.product.is_available" class="u-full-width">
+    </div>
+    <div>
+      <label>Quantity</label>
+      <input class="form-control" type="number" name="Quantity" placeholder="Quantity?" ng-model="productsEdit.product.quantity" class="u-full-width">
+    </div>
+    <button class="btn btn-primary" >Update</button>
+  </form>
 </section>
-
-
-
-
-  

@@ -42,17 +42,19 @@ function ProductsOfferedController(Product, $auth) {
 
 ProductsNewController.$inject = ['Product', '$state'];
 function ProductsNewController(Product, $state) {
-  const productsShowsNew = this;
+  const productsNew = this;
 
-  productsShowsNew.productsShow = {};
+  productsNew.product = {};
 
   function create() {
-    Product.save(productsShowsNew.productsShow, () => {
+    console.log('creating with: ', productsNew.product);
+
+    Product.save(productsNew.product, () => {
       $state.go('productsIndex');
     });
   }
 
-  productsShowsNew.create = create;
+  productsNew.create = create;
 }
 
 ProductsShowController.$inject = ['Product', '$state', '$auth'];

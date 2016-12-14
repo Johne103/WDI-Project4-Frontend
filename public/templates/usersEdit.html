@@ -24,11 +24,10 @@
     </div>
     <div ng-if="!main.currentUser.is_store">
       <label>Customer address</label>
-      <!-- <label>Store address</label>
-      <input type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width"> -->
-      <input type="text" name="address" placeholder="Customer address" ng-model="placesNew.place.address" google-place place="placesNew.place" class="u-full-width">
+      <input type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width">
+      <!-- <input type="text" name="address" placeholder="Customer address" ng-model="placesNew.place.address" google-place place="placesNew.place" class="u-full-width"> -->
     </div>
 
-    <button>Update</button>
+    <button class="btn btn-primary">Update</button>
   </form>
 </section>

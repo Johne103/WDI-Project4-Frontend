@@ -11,6 +11,7 @@ function googleMap($window) {
     template: '<div class="google-map"></div>',
     scope: {
       markers: '=',
+      marker: '=',
       center: '='
     },
     link: function($scope, element) {
@@ -37,6 +38,8 @@ function googleMap($window) {
         animation: $window.google.maps.Animation.BOUNCE
       });
 
+      markers.push(centerMarker);
+
       $scope.$watchGroup(['center.latitude', 'center.longitude'], () => {
         const pos = { lat: $scope.center.latitude, lng: $scope.center.longitude };
         map.setCenter(pos);
@@ -60,18 +63,40 @@ function googleMap($window) {
       //   });
       // }
 
-      $scope.$watch('markers', () => {
-        clearMarkers();
-        $scope.markers.forEach((store) => {
-         // Create a marker for each store
-          const marker = new $window.google.maps.Marker({
-            position: { lat: store.latitude, lng: store.longitude },
+      $scope.$watch('marker', () => {
+        if ($scope.marker) {
+          console.log($scope.marker);
+          // clearMarkers();
+          const storeMarker = new $window.google.maps.Marker({
+            position: { lat: $scope.marker.latitude, lng: $scope.marker.longitude },
             map: map,
             animation: $window.google.maps.Animation.DROP
           });
 
-          markers.push(marker);
-        });
+          markers.push(storeMarker); //some array
+          console.log(markers);
+          const bounds = new $window.google.maps.LatLngBounds();
+          for (var i = 0; i < markers.length; i++) {
+            bounds.extend(markers[i].getPosition());
+          }
+          map.fitBounds(bounds);
+        }
+      }, true);
+
+      $scope.$watch('markers', () => {
+        if ($scope.markers) {
+          clearMarkers();
+          $scope.markers.forEach((store) => {
+           // Create a marker for each store
+            const marker = new $window.google.maps.Marker({
+              position: { lat: store.latitude, lng: store.longitude },
+              map: map,
+              animation: $window.google.maps.Animation.DROP
+            });
+
+            markers.push(marker);
+          });
+        }
       }, true);
     }
   };

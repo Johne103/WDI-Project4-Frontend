@@ -3,12 +3,21 @@
   <div >
     <ol>
       <li ng-repeat="product in userOffers.all">
-        <a ui-sref="productsShow({ id: product.id })">
+        <!-- <a ui-sref="productsShow({ id: product.id })">
           <h4 class="productList"> {{ product.name }} </h4>
-          <img ng-src="{{ product.image }}" alt="product image"/>
+        </a> -->
+        <h4> {{ product.name }}</h4>
+        <img ng-src="{{ product.image }}" alt="product image"/>
+        <h6> Original Price: £{{ product.original_price | number : 2 }}   Offer Price: £{{ product.offer_price | number : 2 }}  Savings: £{{ (product.original_price - product.offer_price) | number : 2 }}</h6>
+        <h6> Offer End Date: {{ product.end_time | date:'MM/dd/yyyy' }} </h6>
+        <a ui-sref="usersShow({ id: product.user.id })">
+          <h4> Available from: {{ product.user.username }} </h4>
         </a>
       </li>
     </ol>
   </div>
 
 </section>
+
+
+{{12.52311 | number : 2}}
