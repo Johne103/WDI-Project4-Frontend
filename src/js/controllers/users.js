@@ -2,14 +2,29 @@ angular.module('finalProject')
   .controller('UsersIndexController', UsersIndexController)
   .controller('UsersNewController', UsersNewController)
   .controller('UsersShowController', UsersShowController)
-  .controller('UsersEditController', UsersEditController);
+  .controller('UsersEditController', UsersEditController)
+  .controller('UserOffersController', UserOffersController);
 
-
-UsersIndexController.$inject = ['User'];
-function UsersIndexController(User) {
+UsersIndexController.$inject = ['$auth', 'User'];
+function UsersIndexController($auth, User) {
   const usersIndex = this;
+  const currentUserId = $auth.getPayload().id;
 
-  usersIndex.all = User.query();
+  console.log('UsersIndexController: $auth:', $auth);
+  console.log('UsersIndexController: $auth.currentUser:', $auth.currentUser);
+  console.log('UsersIndexController: $auth.getPayload():', $auth.getPayload());
+
+  usersIndex.all = [];
+  User.query().$promise.then((users) => {
+    const currentUser = users.find((user) => {
+      return user.id === currentUserId;
+    });
+    console.log('currentUser:', currentUser);
+    usersIndex.all = users.filter((user) => {
+      return user.is_store;
+    });
+    console.log('usersIndex.all:', usersIndex.all);
+  });
 }
 
 UsersNewController.$inject = ['User', '$state'];
@@ -57,4 +72,11 @@ function UsersEditController(User, $state) {
 
   this.update = update;
 
+}
+
+UserOffersController.$inject = ['Product'];
+function UserOffersController(Product) {
+  const userOffers = this;
+
+  userOffers.all = Product.query({ is_available: true });
 }

@@ -1,5 +1,6 @@
 angular.module('finalProject')
   .controller('ProductsIndexController', ProductsIndexController)
+  .controller('ProductsOfferedController', ProductsOfferedController)
   .controller('ProductsNewController', ProductsNewController)
   .controller('ProductsShowController', ProductsShowController)
   .controller('ProductsEditController', ProductsEditController);
@@ -7,11 +8,36 @@ angular.module('finalProject')
 
 
 
-ProductsIndexController.$inject = ['Product'];
-function ProductsIndexController(Product) {
-  const productIndex = this;
+ProductsIndexController.$inject = ['Product', '$auth'];
+function ProductsIndexController(Product, $auth) {
+  const productsIndex = this;
 
-  productIndex.all = Product.query();
+  productsIndex.all = Product.query({ user_id: $auth.getPayload().id });
+
+  function onOffer(product) {
+    product.is_available = true;
+    product.$update();
+  }
+
+  productsIndex.onOffer = onOffer;
+}
+
+ProductsOfferedController.$inject = ['Product', '$auth'];
+function ProductsOfferedController(Product, $auth) {
+  const productsOffered = this;
+
+  productsOffered.all = Product.query({ is_available: true, user_id: $auth.getPayload().id });
+
+  function offOffer(product, $index) {
+    product.is_available = false;
+    product.$update();
+
+    console.log($index);
+
+    productsOffered.all.splice($index, 1);
+  }
+
+  productsOffered.offOffer = offOffer;
 }
 
 ProductsNewController.$inject = ['Product', '$state'];
@@ -22,7 +48,7 @@ function ProductsNewController(Product, $state) {
 
   function create() {
     Product.save(productsShowsNew.productsShow, () => {
-      $state.go('productIndex');
+      $state.go('productsIndex');
     });
   }
 
@@ -37,7 +63,7 @@ function ProductsShowController(Product, $state, $auth) {
 
   function deleteProduct() {
     productsShow.product.$remove(() => {
-      $state.go('productIndex');
+      $state.go('productsIndex');
     });
   }
 

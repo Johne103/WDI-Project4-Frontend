@@ -1,13 +1,21 @@
 <section>
 
   <h1>Stores Index</h1>
+
   <ul>
     <li ng-repeat="user in usersIndex.all">
       <a ui-sref="usersShow({ id: user.id })">
         <h4>{{ user.username }}</h4>
-        <!-- <h4>{{ user.email }}</h4> -->
       </a>
     </li>
   </ul>
   
+  <google-map center="{ lat: usersShow.user.latitude, lng: usersShow.user.longitude }" ng-if="usersShow.user.latitude"></google-map>
+
 </section>
+
+
+<!-- <a ui-sref="productsPickedIndex({ storeId: user.id })">
+  <h4 class="userHeading4">{{ user.username }}</h4>
+
+</a> -->

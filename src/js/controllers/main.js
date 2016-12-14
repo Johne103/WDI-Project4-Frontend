@@ -2,8 +2,8 @@ angular.module('finalProject')
   .controller('MainController', MainController)
   ;
 
-MainController.$inject = ['$auth', '$state', '$rootScope'];
-function MainController($auth, $state, $rootScope) {
+MainController.$inject = ['$auth', '$state', '$rootScope', 'User'];
+function MainController($auth, $state, $rootScope, User) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
@@ -12,7 +12,7 @@ function MainController($auth, $state, $rootScope) {
   function logout() {
     $auth.logout()
     .then(() => {
-      $state.go('usersIndex');
+      $state.go('home');
     });
   }
 
@@ -20,6 +20,7 @@ function MainController($auth, $state, $rootScope) {
 
   function secureState(e, toState) {
     main.message = null;
+    main.currentUser = User.get({ id: $auth.getPayload().id });
     // console.log(toState);
     if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
       e.preventDefault();

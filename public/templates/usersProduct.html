@@ -1,10 +1,11 @@
 <section>
 
-  <h1>Products Picked Index</h1>
+  <h1 class="userHeading1">Products Picked Index</h1>
   <div>
-    <ol>
+    <ol class="userSelect">
       Selected Items:
-      <li ng-repeat="item in main.selectedList track by $index">
+      <li class="userSelectList" ng-repeat="item in main.selectedList track by $index">
+        <img {{ item.image}}></img>
         {{ item.name }}
         {{ item.description}}
         {{ item.original_price }}

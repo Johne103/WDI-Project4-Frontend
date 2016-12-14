@@ -2,22 +2,33 @@
 
 <section>
   <form ng-submit="usersEdit.update()">
-    <div>
-      <label>Username</label>
-      <input type="text" name="name" placeholder="Name" ng-model="usersEdit.user.username" class="u-full-width">
+    <div ng-if="main.currentUser.is_store">
+      <label>Store name</label>
+      <input type="text" name="name" placeholder="Store name" ng-model="usersEdit.user.username" class="u-full-width">
     </div>
+    <div ng-if="!main.currentUser.is_store">
+      <label>Customer name</label>
+      <input type="text" name="name" placeholder="Customer name" ng-model="usersEdit.user.username" class="u-full-width">
+    </div>
+
     <div>
       <label>Email</label>
       <input type="text" name="email" placeholder="Email" ng-model="usersEdit.user.email" class="u-full-width">
     </div>
-    <div>
-      <label>Store name</label>
-      <input type="text" name="store_name" placeholder="Store name" ng-model="usersEdit.user.store_name" class="u-full-width">
-    </div>
-    <div>
+
+    <div ng-if="main.currentUser.is_store">
+      <!-- <label>Store address</label> -->
       <label>Store address</label>
       <input type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width">
+      <!-- <input type="text" name="address" placeholder="Store address" ng-model="placesNew.place.address" google-place place="placesNew.place" class="u-full-width"> -->
     </div>
+    <div ng-if="!main.currentUser.is_store">
+      <label>Customer address</label>
+      <!-- <label>Store address</label>
+      <input type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width"> -->
+      <input type="text" name="address" placeholder="Customer address" ng-model="placesNew.place.address" google-place place="placesNew.place" class="u-full-width">
+    </div>
+
     <button>Update</button>
   </form>
 </section>

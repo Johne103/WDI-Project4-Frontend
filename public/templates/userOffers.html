@@ -1,0 +1,14 @@
+<section>
+  <h1 class="productHeading1">Offers</h1>
+  <div >
+    <ol>
+      <li ng-repeat="product in userOffers.all">
+        <a ui-sref="productsShow({ id: product.id })">
+          <h4 class="productList"> {{ product.name }} </h4>
+          <img ng-src="{{ product.image }}" alt="product image"/>
+        </a>
+      </li>
+    </ol>
+  </div>
+
+</section>

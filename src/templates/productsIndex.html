@@ -1,6 +1,6 @@
 <section>
-  <h1>Products Index</h1>
-  <h2>Store name: {{ productsIndex.user.username }}</h2>
+  <h1 class="productHeading1"> Products Index</h1>
+  <h2 class="productHeading2" >Store name: {{ main.currentUser.username }}</h2>
   <div >
     <ol>
       <li ng-repeat="product in productsIndex.all">
@@ -8,7 +8,7 @@
           <h4 class="productList"> {{ product.name }} </h4>
           <img ng-src="{{ product.image }}" alt="product image"/>
         </a>
-        <button ng-click="main.addToSelectedProducts(product)">Add to Basket</button>
+        <button ng-click="productsIndex.onOffer(product)" ng-if="!product.is_available">Add to Basket</button>
       </li>
     </ol>
   </div>

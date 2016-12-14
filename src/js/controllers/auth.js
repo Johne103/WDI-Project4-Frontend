@@ -6,7 +6,9 @@ RegisterController.$inject = ['$auth', '$state'];
 function RegisterController($auth, $state) {
   const register = this;
 
-  register.user = {};
+  register.user = {
+    is_store: false
+  };
 
   function submit() {
     $auth.signup(register.user)
@@ -26,8 +28,14 @@ function LoginController($auth, $state) {
 
   function submit() {
     $auth.login(login.credentials)
-      .then(() => {
-        $state.go('usersIndex');
+      .then((successResponse) => {
+        $auth.currentUser = successResponse.data.user;
+        console.log('LoginController: successResponse:', successResponse);
+        if ($auth.currentUser.is_store){
+          $state.go('usersShow', { id: $auth.currentUser.id });
+        } else {
+          $state.go('usersIndex');
+        }
       });
   }
 
