@@ -2,8 +2,8 @@ angular.module('finalProject')
   .controller('MainController', MainController)
   ;
 
-MainController.$inject = ['$auth', '$state', '$rootScope', 'User'];
-function MainController($auth, $state, $rootScope, User) {
+MainController.$inject = ['$auth', '$state', '$rootScope', 'User', '$window', '$scope'];
+function MainController($auth, $state, $rootScope, User, $window, $scope) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
@@ -16,12 +16,24 @@ function MainController($auth, $state, $rootScope, User) {
     });
   }
 
+  main.location = { latitude: 51.51, longitude: -0.08 };
+
+  $window.navigator.geolocation.getCurrentPosition((pos) => {
+    main.location.latitude = pos.coords.latitude;
+    main.location.longitude = pos.coords.longitude;
+
+    $scope.$apply();
+  });
+
   const protectedStates = ['usersEdit', 'usersNew'];
 
   function secureState(e, toState) {
     main.message = null;
-    main.currentUser = User.get({ id: $auth.getPayload().id });
-    // console.log(toState);
+
+    if($auth.isAuthenticated()) {
+      main.currentUser = User.get({ id: $auth.getPayload().id });
+    }
+
     if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
       e.preventDefault();
       $state.go('login');

@@ -8,23 +8,8 @@ angular.module('finalProject')
 UsersIndexController.$inject = ['$auth', 'User'];
 function UsersIndexController($auth, User) {
   const usersIndex = this;
-  const currentUserId = $auth.getPayload().id;
 
-  console.log('UsersIndexController: $auth:', $auth);
-  console.log('UsersIndexController: $auth.currentUser:', $auth.currentUser);
-  console.log('UsersIndexController: $auth.getPayload():', $auth.getPayload());
-
-  usersIndex.all = [];
-  User.query().$promise.then((users) => {
-    const currentUser = users.find((user) => {
-      return user.id === currentUserId;
-    });
-    console.log('currentUser:', currentUser);
-    usersIndex.all = users.filter((user) => {
-      return user.is_store;
-    });
-    console.log('usersIndex.all:', usersIndex.all);
-  });
+  usersIndex.all = User.query({ is_store: true });
 }
 
 UsersNewController.$inject = ['User', '$state'];
