@@ -3,16 +3,17 @@
   <h4 class="showHeading4">Product type: {{ productsShow.product.name }}</h4>
   <h4 class="showHeading4">Product description: {{ productsShow.product.description }}</h4>
   <img class="productsShowImg" ng-src="{{ productsShow.product.image }}">
-  <h4 class="showHeading4">Original price: £{{ productsShow.product.original_price }}</h4>
-  <h4 class="showHeading4">Offer price: £{{ productsShow.product.offer_price }}</h4>
-  <h4 class="showHeading4">Offer end date: {{ productsShow.product.end_time }}</h4>
+  <h4 class="showHeading4">Original price: £{{ productsShow.product.original_price | number : 2 }}</h4>
+  <h4 class="showHeading4">Offer price: £{{ productsShow.product.offer_price | number : 2 }}</h4>
+  <h4 class="showHeading4">Offer end date: {{ productsShow.product.end_time | date:'dd/MM/yyyy' }}</h4>
+  <!-- <h4 class="showHeading4">Offer end date: {{ productsShow.product.end_time }}</h4> -->
   <h4 class="showHeading4">Offer available: {{ productsShow.product.is_available }}</h4>
   <h4 class="showHeading4">Quantity: {{ productsShow.product.quantity }}</h4>
   <!-- <google-map center="{ lat: 51.5, lng: -0.08 }"></google-map> -->
   <google-map center="{ lat: usersShow.user.latitude, lng: usersShow.user.longitude }" ng-if="usersShow.user.latitude"></google-map>
 
   <a ui-sref="productsEdit({ id: productsShow.product.id })" class="button">Edit<a>
-  <button class="btn btn-primary" ng-if="productsShow.isLoggedIn()" ng-click="productsShow.delete()" ng-click="productsShow.delete()">Delete</button>
+  <button class="btn btn-danger" ng-if="productsShow.isLoggedIn()" ng-click="productsShow.delete()" ng-click="productsShow.delete()">Delete</button>
 </section>
 
 

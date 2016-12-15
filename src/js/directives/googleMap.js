@@ -49,8 +49,8 @@ function googleMap($window) {
       // directionsDisplay.setMap(map);
 
       // function calcRoute(origin, destination) {
-      //   var start = origin;
-      //   var end = destination;
+      //   var center.latitude,center.longitude = origin;
+      //   var store.latitude,store.longitude = destination;
       //   var request = {
       //     origin: start,
       //     destination: end,
@@ -62,6 +62,15 @@ function googleMap($window) {
       //     }
       //   });
       // }
+
+      // function computeDistanceBetween(origin) {
+
+        // const origin=center.latitude,center.longitude|store.latitude,store.longitude
+
+      // }
+      // origins=41.43206,-81.38992|-33.86748,151.20699
+      // computeDistanceBetween(from:LatLng, to:LatLng, radius?:number)
+
 
       $scope.$watch('marker', () => {
         if ($scope.marker) {
@@ -101,6 +110,7 @@ function googleMap($window) {
     }
   };
 }
+
 
 // googleplace.$inject = ['$window'];
 // function googleplace($window) {

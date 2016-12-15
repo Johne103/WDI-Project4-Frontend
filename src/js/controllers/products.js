@@ -78,6 +78,9 @@ function ProductsEditController(Product, $state) {
   const productsEdit = this;
 
   productsEdit.product = Product.get($state.params);
+  productsEdit.product.$promise.then(product => {
+    product.end_time = new Date(product.end_time);
+  });
 
   function update() {
     productsEdit.product.$update(() => {

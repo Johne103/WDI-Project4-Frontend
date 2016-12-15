@@ -13,7 +13,11 @@
     <h1>Customer/Store Details</h1>
     <h2>User/Store name: {{ usersShow.user.username }}</h2>
     <h4>Email: {{ usersShow.user.email }}</h4>
-    <h4>Customer address: {{ usersShow.user.address }}</h4>
+    <h4>Customer/Store address: {{ usersShow.user.address }}</h4>
+    <h4>Open from: {{ usersShow.user.open_from }} am</h4>
+    <h4>Open until: {{ usersShow.user.open_until }} pm</h4>
+    <h4>Website: {{ usersShow.user.website }}</h4>
+    <h4>Phone number: {{ usersShow.user.phone_number }}</h4>
     <h4>Customer current location:
   </div>
   <!-- <h4 class="userHeading4">Products</h4>
@@ -41,13 +45,22 @@
 </div> -->
 
 
-<div>
-  <!-- <google-map markers="usersIndex.all" center="main.location"></google-map> -->
-  <google-map marker="usersShow.user" center="main.location" ng-if="usersShow.user.$resolved"></google-map>
 
-  <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
-  <button class="btn btn-primary"  ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button>
-</div>
+  <!-- <google-map markers="usersIndex.all" center="main.location"></google-map> -->
+
+
+
+  <div ng-if="main.currentUser.is_store">
+    <google-map marker="usersShow.user" center="main.location" ng-if="usersShow.user.$resolved"></google-map>
+    <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
+    <button class="btn btn-danger"  ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button>
+  </div>
+
+  <div ng-if="!main.currentUser.is_store">
+    <google-map marker="usersShow.user" center="main.location" ng-if="usersShow.user.$resolved"></google-map>
+    <!-- <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
+    <button class="btn btn-danger"  ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button> -->
+  </div>
 </section>
 
 

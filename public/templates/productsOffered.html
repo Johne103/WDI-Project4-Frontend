@@ -1,5 +1,5 @@
 <section>
-  <h1> Products Offered</h1>
+  <h1> Products on Offer</h1>
   <h2>Store name: {{ main.currentUser.username }}</h2>
   <div >
     <ol>
@@ -8,9 +8,9 @@
           <h4> {{ product.name }} </h4>
         </a>
         <img ng-src="{{ product.image }}" alt="product image"/>
-        <h6> Original Price: £{{ product.original_price }}    Offer Price: £{{ product.offer_price }}   Savings: £{{ product.original_price - product.offer_price }}</h6>
-        <h6> Offer End Date: {{ product.end_time }} </h6>
-        <button class="btn btn-primary" ng-click="productsOffered.offOffer(product, $index)" ng-if="product.is_available">Remove Offer</button>
+        <h6> Original Price: £{{ product.original_price | number : 2 }}    Offer Price: £{{ product.offer_price | number : 2 }}   Savings: £{{ (product.original_price - product.offer_price)| number : 2 }}</h6>
+        <h6> Offer End Date: {{ product.end_time | date:'dd/MM/yyyy'}} </h6>
+        <button class="btn btn-danger" ng-click="productsOffered.offOffer(product, $index)" ng-if="product.is_available">Remove Offer</button>
       </li>
     </ol>
   </div>

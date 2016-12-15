@@ -10,6 +10,8 @@
           <a ui-sref="productsShow({ id: product.id })">
             <h4 class="productListcard-title"> {{ product.name }} </h4>
           </a>
+          <h4 class="productListcard-title"> Use by Date: {{ product.end_time | date:'dd/MM/yyyy' }} </h4>
+          <h4 class="productListcard-title"> Current price: £{{ product.original_price | number : 2 }} </h4>
           <button class="btn btn-primary" ng-click="productsIndex.onOffer(product)" ng-if="product.is_available">Put on Offer</button>
         </div>
       </div>
