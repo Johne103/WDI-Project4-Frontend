@@ -1,30 +1,43 @@
-<h1>Edit User</h1>
+
+<div class="row">
+  <h1 class="col-md-4 col-xs-8 pageLine">SoBuyLocal</h1>
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries1.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries2.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries3.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
+</div>
+<div class="row">
+  <p class="underLine">_________________________________________________________________________________________________________</p>
+</div>
+
+<h1 class="pageTitle">Edit User</h1>
 
 <section>
   <form ng-submit="usersEdit.update()">
     <div ng-if="main.currentUser.is_store">
       <label>Store name</label>
-      <input type="text" name="name" placeholder="Store name" ng-model="usersEdit.user.username" class="u-full-width">
+      <input class="form-control" type="text" name="name" placeholder="Store name" ng-model="usersEdit.user.username" class="u-full-width">
     </div>
     <div ng-if="!main.currentUser.is_store">
       <label>Customer name</label>
-      <input type="text" name="name" placeholder="Customer name" ng-model="usersEdit.user.username" class="u-full-width">
+      <input class="form-control" type="text" name="name" placeholder="Customer name" ng-model="usersEdit.user.username" class="u-full-width">
     </div>
 
     <div>
       <label>Email</label>
-      <input type="text" name="email" placeholder="Email" ng-model="usersEdit.user.email" class="u-full-width">
+      <input class="form-control" type="text" name="email" placeholder="Email" ng-model="usersEdit.user.email" class="u-full-width">
     </div>
 
     <div ng-if="main.currentUser.is_store">
       <!-- <label>Store address</label> -->
       <label>Store address</label>
-      <input type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width">
+      <input class="form-control" type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width">
       <!-- <input type="text" name="address" placeholder="Store address" ng-model="placesNew.place.address" google-place place="placesNew.place" class="u-full-width"> -->
     </div>
     <div ng-if="!main.currentUser.is_store">
       <label>Customer address</label>
-      <input type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width">
+      <input class="form-control" type="text" name="address" placeholder="Store address" ng-model="usersEdit.user.address" class="u-full-width">
       <!-- <input type="text" name="address" placeholder="Customer address" ng-model="placesNew.place.address" google-place place="placesNew.place" class="u-full-width"> -->
     </div>
 

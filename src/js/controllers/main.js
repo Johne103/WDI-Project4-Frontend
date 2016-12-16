@@ -2,8 +2,8 @@ angular.module('finalProject')
   .controller('MainController', MainController)
   ;
 
-MainController.$inject = ['$auth', '$state', '$rootScope', 'User', '$window', '$scope'];
-function MainController($auth, $state, $rootScope, User, $window, $scope) {
+MainController.$inject = ['$auth', '$state', '$rootScope', 'User', '$window'];
+function MainController($auth, $state, $rootScope, User, $window) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
@@ -15,15 +15,6 @@ function MainController($auth, $state, $rootScope, User, $window, $scope) {
       $state.go('home');
     });
   }
-
-  main.location = { latitude: 51.51, longitude: -0.08 };
-
-  $window.navigator.geolocation.getCurrentPosition((pos) => {
-    main.location.latitude = pos.coords.latitude;
-    main.location.longitude = pos.coords.longitude;
-
-    $scope.$apply();
-  });
 
   const protectedStates = ['usersEdit', 'usersNew'];
 

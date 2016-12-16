@@ -1,7 +1,20 @@
-<h1>Edit Product</h1>
+
+<div class="row">
+  <h1 class="col-md-4 col-xs-8 pageLine">SoBuyLocal</h1>
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries1.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries2.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries3.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
+  <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
+</div>
+<div class="row">
+  <p class="underLine">_________________________________________________________________________________________________________</p>
+</div>
+
+<h1 class="pageTitle">Edit Product</h1>
 
 <section>
-  <form class="form-inline float-xs-right" ng-submit="productsEdit.update()">
+  <form class="form-inline" ng-submit="productsEdit.update()">
     <div>
       <label>Product name</label>
       <input class="form-control"  type="text" name="name" placeholder="Product Name" ng-model="productsEdit.product.name" class="u-full-width">
@@ -28,7 +41,7 @@
     </div>
     <div>
       <label>Availability</label>
-      <input class="form-control" type="checkbox" name="availability" placeholder="Item is available?" ng-model="productsNew.product.is_available" class="u-full-width">
+      <input class="form-control" type="checkbox" name="availability" placeholder="Item is available?" ng-model="productsEdit.product.is_available" class="u-full-width">
     </div>
     <div>
       <label>Quantity</label>

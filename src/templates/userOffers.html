@@ -1,14 +1,32 @@
 <section>
-  <h1 class="productHeading1">Offers</h1>
-  <div >
+  <div class="row">
+    <h1 class="col-md-4 col-xs-8 pageLine">SoBuyLocal</h1>
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries1.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries2.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries3.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
+  </div>
+  <div class="row">
+    <p class="underLine">_________________________________________________________________________________________________________</p>
+  </div>
+
+  <h1 class="pageTitle">Offers</h1>
+
+  <div ng-if="!main.isLoggedIn()">
+    <h4>Please Register or Login to see the items on offer near you.</h4>
+  </div>
+
+  <div ng-if="main.isLoggedIn()">
     <ol>
       <li ng-repeat="product in userOffers.all">
         <!-- <a ui-sref="productsShow({ id: product.id })">
           <h4 class="productList"> {{ product.name }} </h4>
         </a> -->
         <h4> {{ product.name }}</h4>
-        <img ng-src="{{ product.image }}" alt="product image"/>
-        <h6> Original Price: £{{ product.original_price | number : 2 }}   Offer Price: £{{ product.offer_price | number : 2 }}  Savings: £{{ (product.original_price - product.offer_price) | number : 2 }}</h6>
+        <img class="offerImg" ng-src="{{ product.image }}" alt="product image"/>
+        <h6> Original Price: £{{ product.original_price | number : 2 }}   Offer Price: £{{ product.offer_price | number : 2 }} </h6>
+        <h6 class="userSavings">Savings: £{{ (product.original_price - product.offer_price) | number : 2 }}</h6>
         <!-- <h6> Offer End Date: {{ product.end_time | date:'MM/dd/yyyy' }} </h6> -->
         <h6> Offer End Date: {{ product.end_time }} </h6>
         <a ui-sref="usersShow({ id: product.user.id })">

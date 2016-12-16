@@ -1,8 +1,21 @@
 <section>
-  <h1 class="showHeading1">Show Product</h1>
+  <div class="row">
+    <h1 class="col-md-4 col-xs-8 pageLine">SoBuyLocal</h1>
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries1.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries2.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries3.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
+  </div>
+  <div class="row">
+    <p class="underLine">_________________________________________________________________________________________________________</p>
+  </div>
+
+  <h1 class="pageTitle">Show Product</h1>
+
   <h4 class="showHeading4">Product type: {{ productsShow.product.name }}</h4>
   <h4 class="showHeading4">Product description: {{ productsShow.product.description }}</h4>
-  <img class="productsShowImg" ng-src="{{ productsShow.product.image }}">
+  <img class="offerImg" ng-src="{{ productsShow.product.image }}">
   <h4 class="showHeading4">Original price: £{{ productsShow.product.original_price | number : 2 }}</h4>
   <h4 class="showHeading4">Offer price: £{{ productsShow.product.offer_price | number : 2 }}</h4>
   <h4 class="showHeading4">Offer end date: {{ productsShow.product.end_time | date:'dd/MM/yyyy' }}</h4>

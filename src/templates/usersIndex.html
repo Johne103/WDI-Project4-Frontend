@@ -1,6 +1,18 @@
 <section>
 
-  <h1>Stores Index</h1>
+  <div class="row">
+    <h1 class="col-md-4 col-xs-8 pageLine">SoBuyLocal</h1>
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries1.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries2.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries3.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
+  </div>
+  <div class="row">
+    <p class="underLine">_________________________________________________________________________________________________________</p>
+  </div>
+
+  <h1 class="pageTitle">Stores Index</h1>
 
   <ul>
     <li ng-repeat="user in usersIndex.all">
@@ -10,7 +22,7 @@
     </li>
   </ul>
 
-  <google-map markers="usersIndex.all" center="main.location"></google-map>
+  <google-map markers="usersIndex.all" center="usersIndex.location"></google-map>
 
 </section>
 
