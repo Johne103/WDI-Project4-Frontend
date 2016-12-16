@@ -42,7 +42,6 @@ function googleMap($window) {
 
       $scope.$watchGroup(['center.latitude', 'center.longitude'], () => {
         const pos = { lat: $scope.center.latitude, lng: $scope.center.longitude };
-        map.setCenter(pos);
         centerMarker.setPosition(pos);
       });
 
@@ -65,7 +64,12 @@ function googleMap($window) {
 
       // function computeDistanceBetween(origin) {
 
-        // const origin=center.latitude,center.longitude|store.latitude,store.longitude
+      // const origin=center.latitude,center.longitude|store.latitude,store.longitude
+
+
+
+
+
 
       // }
       // origins=41.43206,-81.38992|-33.86748,151.20699
@@ -74,21 +78,22 @@ function googleMap($window) {
 
       $scope.$watch('marker', () => {
         if ($scope.marker) {
-          console.log($scope.marker);
+          const pos = { lat: $scope.marker.latitude, lng: $scope.marker.longitude };
           // clearMarkers();
           const storeMarker = new $window.google.maps.Marker({
-            position: { lat: $scope.marker.latitude, lng: $scope.marker.longitude },
+            position: pos,
             map: map,
             animation: $window.google.maps.Animation.DROP
           });
 
-          markers.push(storeMarker); //some array
-          console.log(markers);
-          const bounds = new $window.google.maps.LatLngBounds();
-          for (var i = 0; i < markers.length; i++) {
-            bounds.extend(markers[i].getPosition());
-          }
-          map.fitBounds(bounds);
+          map.setCenter(pos);
+
+          markers.push(storeMarker);
+          // const bounds = new $window.google.maps.LatLngBounds();
+          // for (var i = 0; i < markers.length; i++) {
+          //   bounds.extend(markers[i].getPosition());
+          // }
+          // map.fitBounds(bounds);
         }
       }, true);
 

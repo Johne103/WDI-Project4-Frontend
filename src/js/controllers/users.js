@@ -5,11 +5,20 @@ angular.module('finalProject')
   .controller('UsersEditController', UsersEditController)
   .controller('UserOffersController', UserOffersController);
 
-UsersIndexController.$inject = ['$auth', 'User'];
-function UsersIndexController($auth, User) {
+UsersIndexController.$inject = ['$auth', 'User', '$window', '$scope'];
+function UsersIndexController($auth, User, $window, $scope) {
   const usersIndex = this;
 
   usersIndex.all = User.query({ is_store: true });
+
+  usersIndex.location = { latitude: 51.51, longitude: -0.08 };
+
+  $window.navigator.geolocation.getCurrentPosition((pos) => {
+    usersIndex.location.latitude = pos.coords.latitude;
+    usersIndex.location.longitude = pos.coords.longitude;
+
+    $scope.$apply();
+  });
 }
 
 UsersNewController.$inject = ['User', '$state'];
@@ -27,8 +36,8 @@ function UsersNewController(User, $state) {
   usersNew.create = create;
 }
 
-UsersShowController.$inject = ['User', '$state', '$auth'];
-function UsersShowController(User, $state, $auth) {
+UsersShowController.$inject = ['User', '$state', '$auth', '$scope', '$window', '$http'];
+function UsersShowController(User, $state, $auth, $scope, $window, $http) {
   const usersShow = this;
 
   usersShow.user = User.get($state.params);
@@ -38,6 +47,16 @@ function UsersShowController(User, $state, $auth) {
       $state.go('usersIndex');
     });
   }
+
+  usersShow.location = { latitude: 51.51, longitude: -0.08 };
+
+  $window.navigator.geolocation.getCurrentPosition((pos) => {
+    usersShow.location.latitude = pos.coords.latitude;
+    usersShow.location.longitude = pos.coords.longitude;
+
+    $scope.$apply();
+  });
+
 
   usersShow.delete = deleteUser;
   usersShow.isLoggedIn = $auth.isAuthenticated;

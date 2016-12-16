@@ -1,38 +1,50 @@
-<h1>Add a New Product</h1>
-
 <section>
+  <div class="row">
+    <h1 class="col-md-4 col-xs-8 pageLine">SoBuyLocal</h1>
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries1.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries2.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries3.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
+  </div>
+  <div class="row">
+    <p class="underLine">_________________________________________________________________________________________________________</p>
+  </div>
+
+  <h1 class="pageTitle">Add a New Product</h1>
+
   <form ng-submit="productsNew.create()">
     <div>
       <label>Product name</label>
-      <input type="text" name="name" placeholder="Product Name" ng-model="productsNew.product.name" class="u-full-width">
+      <input class="form-control" type="text" name="name" placeholder="Product Name" ng-model="productsNew.product.name" class="u-full-width">
     </div>
     <div>
       <label>Product description</label>
-      <input type="text" name="description" placeholder="Description" ng-model="productsNew.product.description" class="u-full-width">
+      <input class="form-control" type="text" name="description" placeholder="Description" ng-model="productsNew.product.description" class="u-full-width">
     </div>
     <div>
       <label>Product Image</label>
-      <input type="text" name="image" placeholder="Product Image" ng-model="productsNew.product.image" class="u-full-width">
+      <input class="form-control" type="text" name="image" placeholder="Product Image" ng-model="productsNew.product.image" class="u-full-width">
     </div>
     <div>
       <label>Original Price</label>
-      <input type="float" name="originalPrice" placeholder="Original Price" ng-model="productsNew.product.original_price" class="u-full-width">
+      <input class="form-control" type="float" name="originalPrice" placeholder="Original Price" ng-model="productsNew.product.original_price" class="u-full-width">
     </div>
     <div>
       <label>Offer Price</label>
-      <input type="float" name="offerPrice" placeholder="Offer Price" ng-model="productsNew.product.offer_price" class="u-full-width">
+      <input class="form-control" type="float" name="offerPrice" placeholder="Offer Price" ng-model="productsNew.product.offer_price" class="u-full-width">
     </div>
     <div>
       <label>Offer End Date</label>
-      <input type="date" name="endTime" placeholder="Date" ng-model="productsNew.product.end_time" class="u-full-width">
+      <input class="form-control" type="date" name="endTime" placeholder="Date" ng-model="productsNew.product.end_time" class="u-full-width">
     </div>
     <div>
       <label>Availability</label>
-      <input type="checkbox" name="availability" placeholder="Item on Offer?" ng-model="productsNew.product.is_available" class="u-full-width">
+      <input class="form-control" type="checkbox" name="availability" placeholder="Item on Offer?" ng-model="productsNew.product.is_available" class="u-full-width">
     </div>
     <div>
       <label>Quantity</label>
-      <input type="number" name="Quantity" placeholder="Quantity" ng-model="productsNew.product.quantity" class="u-full-width">
+      <input class="form-control" type="number" name="Quantity" placeholder="Quantity" ng-model="productsNew.product.quantity" class="u-full-width">
     </div>
 
     <button class="btn btn-primary">Create</button>

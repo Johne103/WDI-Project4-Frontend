@@ -1,5 +1,18 @@
 <section>
-  <h1> Products on Offer</h1>
+  <div class="row">
+    <h1 class="col-md-4 col-xs-8 pageLine">SoBuyLocal</h1>
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries1.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries2.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries3.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
+    <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
+  </div>
+  <div class="row">
+    <p class="underLine">_________________________________________________________________________________________________________</p>
+  </div>
+
+  <h1 class="pageTitle">Products no Offer</h1>
+
   <h2>Store name: {{ main.currentUser.username }}</h2>
   <div >
     <ol>
@@ -7,8 +20,9 @@
         <a ui-sref="productsShow({ id: product.id })">
           <h4> {{ product.name }} </h4>
         </a>
-        <img ng-src="{{ product.image }}" alt="product image"/>
-        <h6> Original Price: £{{ product.original_price | number : 2 }}    Offer Price: £{{ product.offer_price | number : 2 }}   Savings: £{{ (product.original_price - product.offer_price)| number : 2 }}</h6>
+        <img class="offerImg" ng-src="{{ product.image }}" alt="product image"/>
+        <h6 class="pricing"> Original Price: £{{ product.original_price | number : 2 }}    Offer Price: £{{ product.offer_price | number : 2 }}</h6>
+        <h6 class="savings">  Savings: £{{ (product.original_price - product.offer_price)| number : 2 }}</h6>
         <h6> Offer End Date: {{ product.end_time | date:'dd/MM/yyyy'}} </h6>
         <button class="btn btn-danger" ng-click="productsOffered.offOffer(product, $index)" ng-if="product.is_available">Remove Offer</button>
       </li>
