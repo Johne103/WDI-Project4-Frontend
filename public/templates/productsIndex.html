@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-md-4 col-sm-12 cards-single" ng-repeat="product in productsIndex.all">
       <div class="card">
-        <img class="card-img-top" ng-src="{{ product.image }}" alt="product image">
+        <img class="card-img-prod" ng-src="{{ product.image }}" alt="product image">
         <div class="card-block">
           <a ui-sref="productsShow({ id: product.id })">
             <h4 class="productListcard-title"> {{ product.name }} </h4>
