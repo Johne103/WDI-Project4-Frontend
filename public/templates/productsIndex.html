@@ -7,13 +7,13 @@
     <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
     <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
   </div>
-  <div class="row">
-    <p class="underLine">_________________________________________________________________________________________________________</p>
+  <div class="rowUnderline">
+    <p class="underLine"></p>
   </div>
 
   <h1 class="pageTitle">Product Index</h1>
 
-  <h2>Store name: {{ main.currentUser.username }}</h2>
+  <h2 class="storeName">Store name: {{ main.currentUser.username }}</h2>
   <!-- <div class="card-deck-wrapper"> -->
   <div class="row">
     <div class="col-md-4 col-sm-12 cards-single" ng-repeat="product in productsIndex.all">
@@ -23,7 +23,7 @@
           <a ui-sref="productsShow({ id: product.id })">
             <h4 class="productListcard-title"> {{ product.name }} </h4>
           </a>
-          <h4 class="productListcard-title"> Use by Date: {{ product.end_time | date:'dd/MM/yyyy' }} </h4>
+          <h4 class="productListcard-title"> Use by Date: {{ product.end_time  | date : dd/mm/yyyy }} </h4>
           <h4 class="productListcard-title"> Current price: £{{ product.original_price | number : 2 }} </h4>
           <button class="btn btn-primary" ng-click="productsIndex.onOffer(product)" ng-if="!product.is_available">Put on Offer</button>
         </div>

@@ -8,8 +8,8 @@
     <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries4.png" alt="image">
     <img class="col-md-2 col-xs-2 pageLineImg" src="/images/groceries5.png" alt="image">
   </div>
-  <div class="row">
-    <p class="underLine">_________________________________________________________________________________________________________</p>
+  <div class="rowUnderline">
+    <p class="underLine"></p>
   </div>
 
   <h1 class="pageTitle">Stores Index</h1>
@@ -17,7 +17,7 @@
   <ul>
     <li ng-repeat="user in usersIndex.all">
       <a ui-sref="usersShow({ id: user.id })">
-        <h4>{{ user.username }}</h4>
+        <h4 class="storeDetail">{{ user.username }}</h4>
       </a>
     </li>
   </ul>

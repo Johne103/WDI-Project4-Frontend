@@ -6,6 +6,7 @@
   display: inline-block;
   width: 100px;
   height: 100px;
+  background-color: #f2f2f2;
   border-radius: 10px;
   margin-left: auto;
 }
@@ -27,6 +28,11 @@
 
 .card {
   width: 300px;
+  border-radius: 10px;
+}
+
+.card-home {
+  width: 280px;
 }
 
 .cards-single {
@@ -55,6 +61,7 @@
 .navbar {
   background-color: #eff2f6;
 }
+
 .navbar-brand, {
   font-family: 'Baloo Bhaina', cursive;
   color: #004995;
@@ -65,7 +72,7 @@
   font-family: 'Baloo Bhaina', cursive;
   color: #004995;
   font-size: 25px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .form-control {
@@ -93,7 +100,6 @@
   margin-top: 15px;
 }
 
-
 .pageTitle {
   font-size: 26px;
   font-family: 'Baloo Bhaina', cursive;
@@ -118,9 +124,37 @@ h4 {
 }
 
 .underLine {
-  font-size: 15px;
-  color: #0099ff;
-  font-weight: bold;
-  padding: 0px;
-  margin-top: 0px;
+  border-bottom: 2px solid #0099ff;
+  width: 65%;
+}
+
+.storeName {
+  color: #A9A9A9;
+  font-size: 30px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.storeDetail {
+  color: #A9A9A9;
+  font-size: 20px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.rowOffer {
+  border-bottom: 1px solid #bfbfbf;
+  width: 60%;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.offerLine {
+  color: #A9A9A9;
+  font-size: 20px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.homeButton {
+  height: 40px;
+  width: 40px;
+  margin-bottom: 0px;
 }
