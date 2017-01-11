@@ -27,8 +27,8 @@
 }
 
 .card {
-  width: 300px;
-  border-radius: 10px;
+  // width: 300px;
+  border-radius: 0px;
 }
 
 .card-home {
@@ -41,13 +41,18 @@
   }
 }
 
-.card-img-top {
+.card-front-img-top {
   height: 250px;
   width: 100%;
 }
 
+.card-img-top {
+  // height: 250px;
+  width: 100%;
+}
+
 .card-img-prod {
-  height: 250px;
+  // height: 250px;
   width: 90%;
 }
 
@@ -68,11 +73,43 @@
   margin-top: 20px;
 }
 
+.navbar-toggleable-md {
+  clear: left;
+  .navbar-nav {
+    li:first-child {
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 992px) {
+    clear: none;
+    .navbar-nav {
+      li:first-child {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+.navbar-toggleable-md .navbar-nav {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin: 0;
+  }
+}
+
 .nav-item {
   font-family: 'Baloo Bhaina', cursive;
   color: #004995;
   font-size: 25px;
+  float: right;
   margin-top: 30px;
+
+}
+
+.navbar-toggler {
+  float: right;
+  margin-top: 25px;
 }
 
 .form-control {
@@ -84,6 +121,17 @@
   font-family: 'Baloo Bhaina', cursive;
   color: #004995;
   margin-top: 30px;
+
+}
+
+@media (max-width: 991px) {
+  .byLine {
+    clear: left;
+    font-size: 26px;
+    font-family: 'Baloo Bhaina', cursive;
+    color: #004995;
+    margin-top: 0px;
+  }
 }
 
 .titleLine {

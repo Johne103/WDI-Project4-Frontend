@@ -1,6 +1,6 @@
 angular.module('finalProject')
  .directive('googleMap', googleMap);
- // .directive('googleplace', googleplace);
+
 
 
 googleMap.$inject = ['$window'];
@@ -35,6 +35,7 @@ function googleMap($window) {
       const centerMarker = new $window.google.maps.Marker({
         position: { lat: $scope.center.latitude, lng: $scope.center.longitude },
         map: map,
+        icon: 'images/grayMarker.png',
         animation: $window.google.maps.Animation.BOUNCE
       });
 
@@ -115,40 +116,3 @@ function googleMap($window) {
     }
   };
 }
-
-
-// googleplace.$inject = ['$window'];
-// function googleplace($window) {
-//   return {
-//     restrict: 'A',
-//     require: 'ngModel',
-//     scope: {
-//       request: '='
-//     },
-//     link: function(scope, element, attrs, model) {
-//       const options = {
-//         types: [],
-//         componentRestrictions: {}
-//       };
-//
-//       const autocomplete = new $window.google.maps.places.Autocomplete(element[0], options);
-//
-//       autocomplete.addListener('place_changed', () => {
-//         const place = autocomplete.getPlace();
-//         const latLng = place.geometry.location.toJSON();
-//         console.log('element', element.attr('id'));
-//         const id = element.attr('id');
-//         if(id === 'origin-input') {
-//           scope.request.location_lat = latLng.lat;
-//           scope.request.location_lng = latLng.lng;
-//         } else if (id === 'destination-input') {
-//           scope.request.destination_lat = latLng.lat;
-//           scope.request.destination_lng = latLng.lng;
-//         }
-//        // scope.request.lat = latLng.lat;
-//        // scope.request.lng = latLng.lng;
-//         model.$setViewValue(element.val());
-//       });
-//     }
-//   };
-// }

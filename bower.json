@@ -18,9 +18,7 @@
     "angular": "^1.5.9",
     "angular-resource": "^1.5.9",
     "angular-ui-router": "^0.3.2",
-    "satellizer": "^0.15.5"
-  },
-  "devDependencies": {
+    "satellizer": "^0.15.5",
     "bootstrap": "v4.0.0-alpha.5"
   }
 }
