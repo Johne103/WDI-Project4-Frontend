@@ -63,6 +63,16 @@
   margin-top: 15px;
 }
 
+@media (max-width: 767px) {
+  .pageLineImg {
+    clear: none;
+    height:30px;
+    width:6%;
+    padding:0;
+    margin-top: 15px;
+  }
+}
+
 .navbar {
   background-color: #eff2f6;
 }
@@ -73,6 +83,14 @@
   margin-top: 20px;
 }
 
+// @media (max-width: 991px) {
+// .navbar-brand, {
+//   font-family: 'Baloo Bhaina', cursive;
+//   color: #004995;
+//   margin-top: 20px;
+//   }
+// }
+
 .navbar-toggleable-md {
   clear: left;
   .navbar-nav {
@@ -80,7 +98,7 @@
       margin-top: 0;
     }
   }
-  @media (min-width: 992px) {
+  @media (min-width: 991px) {
     clear: none;
     .navbar-nav {
       li:first-child {
@@ -104,7 +122,16 @@
   font-size: 25px;
   float: right;
   margin-top: 30px;
+}
 
+@media (max-width: 991px) {
+.nav-item {
+  font-family: 'Baloo Bhaina', cursive;
+  color: #004995;
+  font-size: 25px;
+  float: right;
+  margin-top: 30px;
+  }
 }
 
 .navbar-toggler {
@@ -116,13 +143,12 @@
   width: 63%;
 }
 
-.byLine {
-  font-size: 26px;
-  font-family: 'Baloo Bhaina', cursive;
-  color: #004995;
-  margin-top: 30px;
-
-}
+  .byLine {
+    font-size: 26px;
+    font-family: 'Baloo Bhaina', cursive;
+    color: #004995;
+    margin-top: 30px;
+  }
 
 @media (max-width: 991px) {
   .byLine {
@@ -139,6 +165,15 @@
   font-family: 'Baloo Bhaina', cursive;
   color: #E30520;
   margin-top: 15px;
+}
+
+@media (max-width: 991px) {
+ .titleLine {
+   font-size: 36px;
+   font-family: 'Baloo Bhaina', cursive;
+   color: #E30520;
+   margin-top: 15px;
+ }
 }
 
 .pageLine {
