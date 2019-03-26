@@ -2,7 +2,6 @@
   <nav class="navbar navbar-light bg-faded">
     <div class="container">
       <a class="navbar-brand" ui-sref="home"><img class="homeButton" src="/images/homeButton.png"></a>
-
       <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
       <div class="collapse navbar-toggleable-md" id="navbarResponsive">
         <ul class="nav navbar-nav">
@@ -12,8 +11,8 @@
           <li class="nav-item" ng-if="main.currentUser.is_store"><a ui-sref="productsOffered" ui-sref-active="active"> Offers</a></li>
           <li class="nav-item" ng-if="!main.currentUser.is_store"><a ui-sref="userOffers" ui-sref-active="active"> Offers</a></li>
           <li class="nav-item" ng-if="main.currentUser.is_store"><a ui-sref="productsNew" ui-sref-active="active">New Product</a></li>
-          <li class="nav-item" ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-          <li class="nav-item" ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+          <li class="nav-item" ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register or</a></li>
+          <li class="nav-item" ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Sign in</a></li>
           <li class="nav-item" ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
         </ul>
       </div>

@@ -24,18 +24,36 @@
     <h4 class="storeDetail">Website: {{ usersShow.user.website }}</h4>
     <h4 class="storeDetail">Phone number: {{ usersShow.user.phone_number }}</h4>
   </div>
+
   <div ng-if="!main.currentUser.is_store">
 
-    <h1 class="pageTitle">Customer/Store Details</h1>
+    <div ng-if="main.currentUser.username == usersShow.user.username">
 
-    <h2 class="storeName">User/Store name: {{ usersShow.user.username }}</h2>
-    <h4 class="storeDetail">Email: {{ usersShow.user.email }}</h4>
-    <h4 class="storeDetail">Customer/Store address: {{ usersShow.user.address }}</h4>
-    <h4 class="storeDetail">Open from: {{ usersShow.user.open_from }} am</h4>
-    <h4 class="storeDetail">Open until: {{ usersShow.user.open_until }} pm</h4>
-    <h4 class="storeDetail">Website: {{ usersShow.user.website }}</h4>
-    <h4 class="storeDetail">Phone number: {{ usersShow.user.phone_number }}</h4>
-    <h4 class="storeDetail">Distance to selected store: {{ usersShow.distanceToStore }}</h4>
+      <h1 class="pageTitle">Customer Details</h1>
+
+      <h2 class="userName">User name: {{ usersShow.user.username }}</h2>
+      <h4 class="userDetail">Email: {{ usersShow.user.email }}</h4>
+
+  </div>
+
+  <div ng-if="!main.currentUser.is_store">
+
+    <div ng-if="main.currentUser.username !== usersShow.user.username">
+
+      <h1 class="pageTitle">Store Details</h1>
+
+      <h2 class="userName">User name: {{ usersShow.user.username }}</h2>
+      <h4 class="userDetail">Email: {{ usersShow.user.email }}</h4>
+
+      <h4 class="userDetail">Customer/Store address: {{ usersShow.user.address }}</h4>
+      <h4 class="userDetail">Open from: {{ usersShow.user.open_from }} am</h4>
+      <h4 class="userDetail">Open until: {{ usersShow.user.open_until }} pm</h4>
+      <h4 class="userDetail">Website: {{ usersShow.user.website }}</h4>
+      <h4 class="userDetail">Phone number: {{ usersShow.user.phone_number }}</h4>
+      <h4 class="userDetail">Distance to selected store: {{ usersShow.distanceToStore }}</h4>
+
+    </div>
+
   </div>
   <!-- <h4 class="userHeading4">Products</h4>
   <ol>

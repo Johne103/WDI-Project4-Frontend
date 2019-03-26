@@ -13,40 +13,48 @@
 
   <h1 class="pageTitle">Add a New Product</h1>
 
-  <form ng-submit="productsNew.create()">
-    <div>
-      <label>Product name</label>
-      <input class="form-control" type="text" name="name" placeholder="Product Name" ng-model="productsNew.product.name" class="u-full-width">
-    </div>
-    <div>
-      <label>Product description</label>
-      <input class="form-control" type="text" name="description" placeholder="Description" ng-model="productsNew.product.description" class="u-full-width">
-    </div>
-    <div>
-      <label>Product Image</label>
-      <input class="form-control" type="text" name="image" placeholder="Product Image" ng-model="productsNew.product.image" class="u-full-width">
-    </div>
-    <div>
-      <label>Original Price</label>
-      <input class="form-control" type="float" name="originalPrice" placeholder="Original Price" ng-model="productsNew.product.original_price" class="u-full-width">
-    </div>
-    <div>
-      <label>Offer Price</label>
-      <input class="form-control" type="float" name="offerPrice" placeholder="Offer Price" ng-model="productsNew.product.offer_price" class="u-full-width">
-    </div>
-    <div>
-      <label>Offer End Date</label>
-      <input class="form-control" type="date" name="endTime" placeholder="Date" ng-model="productsNew.product.end_time" class="u-full-width">
-    </div>
-    <div>
-      <label>Availability</label>
-      <input class="form-control" type="checkbox" name="availability" placeholder="Item on Offer?" ng-model="productsNew.product.is_available" class="u-full-width">
-    </div>
-    <div>
-      <label>Quantity</label>
-      <input class="form-control" type="number" name="Quantity" placeholder="Quantity" ng-model="productsNew.product.quantity" class="u-full-width">
-    </div>
+  <div ng-if="!main.isLoggedIn()">
+    
+    <h4>Please Register or Sign in to add to your product list.</h4>
+  </div>
 
-    <button class="btn btn-primary">Create</button>
-  </form>
+  <div ng-if="main.isLoggedIn()">
+
+    <form ng-submit="productsNew.create()">
+      <div>
+        <label>Product name</label>
+        <input class="form-control" type="text" name="name" placeholder="Product Name" ng-model="productsNew.product.name" class="u-full-width">
+      </div>
+      <div>
+        <label>Product description</label>
+        <input class="form-control" type="text" name="description" placeholder="Description" ng-model="productsNew.product.description" class="u-full-width">
+      </div>
+      <div>
+        <label>Product Image</label>
+        <input class="form-control" type="text" name="image" placeholder="Product Image" ng-model="productsNew.product.image" class="u-full-width">
+      </div>
+      <div>
+        <label>Original Price</label>
+        <input class="form-control" type="float" name="originalPrice" placeholder="Original Price" ng-model="productsNew.product.original_price" class="u-full-width">
+      </div>
+      <div>
+        <label>Offer Price</label>
+        <input class="form-control" type="float" name="offerPrice" placeholder="Offer Price" ng-model="productsNew.product.offer_price" class="u-full-width">
+      </div>
+      <div>
+        <label>Offer End Date</label>
+        <input class="form-control" type="date" name="endTime" placeholder="Date" ng-model="productsNew.product.end_time" class="u-full-width">
+      </div>
+      <div>
+        <label>Availability</label>
+        <input class="form-control" type="checkbox" name="availability" placeholder="Item on Offer?" ng-model="productsNew.product.is_available" class="u-full-width">
+      </div>
+      <div>
+        <label>Quantity</label>
+        <input class="form-control" type="number" name="Quantity" placeholder="Quantity" ng-model="productsNew.product.quantity" class="u-full-width">
+      </div>
+
+      <button class="btn btn-primary">Create</button>
+    </form>
+  </div>
 </section>

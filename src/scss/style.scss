@@ -191,6 +191,7 @@
 }
 
 h4 {
+  margin-top: 10px;
   font-size: 20px;
 }
 
@@ -211,6 +212,18 @@ h4 {
   width: 65%;
 }
 
+.userName {
+  color: #A9A9A9;
+  font-size: 30px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.userDetail {
+  color: #A9A9A9;
+  font-size: 20px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
 .storeName {
   color: #A9A9A9;
   font-size: 30px;
@@ -223,6 +236,14 @@ h4 {
   font-family: 'Rajdhani', sans-serif;
 }
 
+.form_open_from {
+  margin-bottom: 10px;
+}
+
+.register_button{
+  margin-top: 10px;
+}
+]
 .rowOffer {
   border-bottom: 1px solid #bfbfbf;
   width: 60%;
@@ -240,4 +261,16 @@ h4 {
   height: 40px;
   width: 40px;
   margin-bottom: 0px;
+}
+
+
+.logo {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.rhoLogo {
+  height: 50px;
+  width: 200px;
 }
