@@ -83,4 +83,5 @@ function UserOffersController(Product) {
   const userOffers = this;
 
   userOffers.all = Product.query({ is_available: true });
+  // userOffers.all = Product.query({ category: 'Bread' });
 }
