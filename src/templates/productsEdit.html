@@ -14,7 +14,8 @@
 <h1 class="pageTitle">Edit Product</h1>
 
 <section>
-  <form class="form-inline" ng-submit="productsEdit.update()">
+  <!-- <form class="form-inline" ng-submit="productsEdit.update()"> -->
+  <form ng-submit="productsEdit.update()">
     <div>
       <label>Product name</label>
       <input class="form-control"  type="text" name="name" placeholder="Product Name" ng-model="productsEdit.product.name" class="u-full-width">

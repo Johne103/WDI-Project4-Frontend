@@ -25,7 +25,7 @@
     <h4 class="storeDetail">Phone number: {{ usersShow.user.phone_number }}</h4>
   </div>
 
-  <div ng-if="!main.currentUser.is_store">
+  <!-- <div ng-if="!main.currentUser.is_store"> -->
 
     <div ng-if="main.currentUser.username == usersShow.user.username">
 
@@ -93,8 +93,8 @@
 
   <div ng-if="!main.currentUser.is_store">
     <google-map marker="usersShow.user" center="usersShow.location" ng-if="usersShow.user.$resolved"></google-map>
-    <!-- <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
-    <button class="btn btn-danger"  ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button> -->
+    <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
+    <button class="btn btn-danger"  ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button>
   </div>
 </section>
 
