@@ -9,28 +9,62 @@
   </div>
 </div>
 
-<div class="card-group">
+<!-- <a ui-sref="usersIndex" ui-sref-active="active">Stores</a> -->
+
+
+<div class="card-group" ng-if="!main.currentUser.is_store">
   <div class="card">
-    <img class="card-front-img-top" src="/images/soBuyLocalAim.png" alt="Card image cap">
+    <a ui-sref="login" ui-sref-active="active"><img class="card-front-img-top" src="/images/SignIn2.png" alt="Card image cap"></a>
     <div class="card-block">
       <h4 class="card-title"><a ui-sref="register" ui-sref-active="active">Register or </a><a ui-sref="login" ui-sref-active="active">Sign in</a></h4>
       <p class="card-text">By Registering or Signing in, customers are able see a list of local shops, markets and people offering good food at great prices to buyers rather than throughing the food away.</p>
       <p class="card-text"><small class="text-muted">So buy locel</small></p>
     </div>
   </div>
+
   <div class="card">
-    <img class="card-front-img-top" src="/images/soBuyLocalStores.png" alt="Card image cap">
+    <a ui-sref="usersIndex" ui-sref-active="active"><img class="card-front-img-top" src="/images/LocalStores2.png" alt="Card image cap"></a>
     <div class="card-block">
-      <h4 class="card-title">Local Shops and Market Stalls</h4>
-      <p class="card-text">Register or Sign in to list your products for sale and the offers available to your customers. Use the app on your smartphone or desktop to manage your offers.</p>
+      <h4 class="card-title">Find stores.</h4>
+      <p class="card-text">Find locations that are providing offers of food near you.</p>
       <p class="card-text"><small class="text-muted">So buy local</small></p>
     </div>
   </div>
+
   <div class="card">
-    <img class="card-front-img-top" src="/images/groceries2.png" alt="Card image cap">
+        <a ui-sref="userOffers" ui-sref-active="active"><img class="card-front-img-top" src="/images/LatestOffers2.png" alt="Card image cap"></a>
     <div class="card-block">
-      <h4 class="card-title">Star Offers</h4>
-      <p class="card-text">Check out the great offers on today at Iceland, Park Street, Luton.</p>
+      <h4 class="card-title">Check out the latest offers</h4>
+      <p class="card-text">Find a list of products on offer that will provide you with savings. You can  use the app on your smartphone or desktop.</p>
+      <p class="card-text"><small class="text-muted">So buy local</small></p>
+    </div>
+  </div>
+</div>
+
+<div class="card-group" ng-if="main.currentUser.is_store">
+  <div class="card">
+    <a ui-sref="login" ui-sref-active="active"><img class="card-front-img-top" src="/images/SignIn2.png" alt="Card image cap"></a>
+    <div class="card-block">
+      <h4 class="card-title"><a ui-sref="register" ui-sref-active="active">Register or </a><a ui-sref="login" ui-sref-active="active">Sign in</a></h4>
+      <p class="card-text">By Registering or Signing in, customers are able see a list of local shops, markets and people offering good food at great prices to buyers rather than throughing the food away.</p>
+      <p class="card-text"><small class="text-muted">So buy locel</small></p>
+    </div>
+  </div>
+
+  <!-- <div class="card">
+    <a ui-sref="usersIndex" ui-sref-active="active"><img class="card-front-img-top" src="/images/LocalStores2.png" alt="Card image cap"></a>
+    <div class="card-block">
+      <h4 class="card-title">Find stores.</h4>
+      <p class="card-text">Find locations that are providing offers of food near you.</p>
+      <p class="card-text"><small class="text-muted">So buy local</small></p>
+    </div>
+  </div> -->
+
+  <div class="card">
+        <a ui-sref="productsOffered" ui-sref-active="active"><img class="card-front-img-top" src="/images/LatestOffers2.png" alt="Card image cap"></a>
+    <div class="card-block">
+      <h4 class="card-title">Check out the latest offers</h4>
+      <p class="card-text">Find a list of products on offer that will provide you with savings. You can  use the app on your smartphone or desktop.</p>
       <p class="card-text"><small class="text-muted">So buy local</small></p>
     </div>
   </div>

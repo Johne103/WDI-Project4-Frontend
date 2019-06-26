@@ -41,6 +41,27 @@
       <!-- <input type="text" name="address" placeholder="Customer address" ng-model="placesNew.place.address" google-place place="placesNew.place" class="u-full-width"> -->
     </div>
 
+    <div ng-if="main.currentUser.is_store">
+      <label>Open from</label>
+      <input class="form-control" type="text" name="name" placeholder="Open from" ng-model="usersEdit.user.open_from" class="u-full-width">
+    </div>
+
+    <div ng-if="main.currentUser.is_store">
+      <label>Open until</label>
+      <input class="form-control" type="text" name="name" placeholder="Open until" ng-model="usersEdit.user.open_until" class="u-full-width">
+    </div>
+
+    <div ng-if="main.currentUser.is_store">
+      <label>Website</label>
+      <input class="form-control" type="text" name="name" placeholder="Website" ng-model="usersEdit.user.website" class="u-full-width">
+    </div>
+
+    <div ng-if="main.currentUser.is_store">
+      <label>Phone number</label>
+      <input class="form-control" type="text" name="name" placeholder="Phone number" ng-model="usersEdit.user.phone_number" class="u-full-width">
+    </div>
+
+
     <button class="btn btn-primary">Update</button>
   </form>
 </section>

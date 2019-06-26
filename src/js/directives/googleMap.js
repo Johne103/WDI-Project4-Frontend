@@ -100,7 +100,7 @@ function googleMap($window) {
 
       $scope.$watch('markers', () => {
         if ($scope.markers) {
-          clearMarkers();
+          // clearMarkers();
           $scope.markers.forEach((store) => {
            // Create a marker for each store
             const marker = new $window.google.maps.Marker({

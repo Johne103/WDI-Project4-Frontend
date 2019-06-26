@@ -25,7 +25,7 @@
     <h4 class="storeDetail">Phone number: {{ usersShow.user.phone_number }}</h4>
   </div>
 
-  <!-- <div ng-if="!main.currentUser.is_store"> -->
+  <div ng-if="!main.currentUser.is_store">
 
     <div ng-if="main.currentUser.username == usersShow.user.username">
 
@@ -33,7 +33,7 @@
 
       <h2 class="userName">User name: {{ usersShow.user.username }}</h2>
       <h4 class="userDetail">Email: {{ usersShow.user.email }}</h4>
-
+    </div>
   </div>
 
   <div ng-if="!main.currentUser.is_store">
@@ -46,11 +46,12 @@
       <h4 class="userDetail">Email: {{ usersShow.user.email }}</h4>
 
       <h4 class="userDetail">Store address: {{ usersShow.user.address }}</h4>
+      <!-- <hw class="userDetail">Store latitude: {{ userShow.user.latitude }}</h4> -->
       <h4 class="userDetail">Open from: {{ usersShow.user.open_from }} am</h4>
       <h4 class="userDetail">Open until: {{ usersShow.user.open_until }} pm</h4>
       <h4 class="userDetail">Website: {{ usersShow.user.website }}</h4>
       <h4 class="userDetail">Phone number: {{ usersShow.user.phone_number }}</h4>
-      <h4 class="userDetail">Distance to selected store: {{ usersShow.distanceToStore }}</h4>
+      <!-- <h4 class="userDetail">Distance to selected store: {{ usersShow.distanceToStore }}</h4> -->
 
     </div>
 
@@ -93,8 +94,10 @@
 
   <div ng-if="!main.currentUser.is_store">
     <google-map marker="usersShow.user" center="usersShow.location" ng-if="usersShow.user.$resolved"></google-map>
-    <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
-    <button class="btn btn-danger"  ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button>
+    <!-- <div ng-if="main.currentUser.is_store">
+      <a ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit<a>
+      <button class="btn btn-danger"  ng-if="usersShow.isLoggedIn()" ng-click="usersShow.delete()" ng-click="usersShow.delete()">Delete</button>
+    </div> -->
   </div>
 </section>
 
